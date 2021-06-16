@@ -30,7 +30,7 @@ model = applications.VGG16(include_top=False, weights='imagenet')
 #model = applications.MobileNetV2(include_top=False, weights='imagenet') 
 #model = applications.ResNet50V2(include_top=False, weights='imagenet')
 
-# Add data-augmentation parameters to ImageDataGenerator
+#Add data-augmentation parameters to ImageDataGenerator
 train_datagen = ImageDataGenerator(rescale = 1./255,
                                    rotation_range = 40,
                                    width_shift_range = 0.2,
@@ -40,7 +40,7 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
                                    horizontal_flip = True,
                                    fill_mode='nearest')
 
-# Flow training images using train_datagen generator
+#Flow training images using train_datagen generator
 train_generator = train_datagen.flow_from_directory(train_data_dir,
                                                     target_size=(img_width, img_height),
                                                     batch_size=batch_size,
